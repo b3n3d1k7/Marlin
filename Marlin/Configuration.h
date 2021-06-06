@@ -506,9 +506,9 @@
 //    #define DEFAULT_Kd 114.00
 
     // custom - determined by running M303 E0 S205 C10
-    #define DEFAULT_Kp 33.40
-    #define DEFAULT_Ki 3.02
-    #define DEFAULT_Kd 92.34
+    #define DEFAULT_Kp 37.74
+    #define DEFAULT_Ki 3.34
+    #define DEFAULT_Kd 106.67
   #endif
 #endif // PIDTEMP
 
