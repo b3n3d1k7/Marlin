@@ -1951,6 +1951,15 @@ void prepare_line_to_destination() {
    */
 
   void homeaxis(const AxisEnum axis) {
+    // x,y homing disabled as we have no endstops
+    // just set as homed assuming it has been moved to 0,0 by the user
+    if (axis == X_AXIS || axis == Y_AXIS) {
+      set_axis_is_at_home(axis);
+      sync_plan_position();
+
+      destination[axis] = current_position[axis];
+      return;
+    }
 
     #if ANY(MORGAN_SCARA, MP_SCARA)
       // Only Z homing (with probe) is permitted
